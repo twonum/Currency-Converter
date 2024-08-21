@@ -23,7 +23,7 @@ y = (root.winfo_screenheight() // 2) - (height // 2)
 root.geometry(f"{width}x{height}+{x}+{y}")
 
 # Load microphone image
-microphone_image = tk.PhotoImage(file=r"C:\Users\DELL\OneDrive\Desktop\Self Study\Personal Projects\images\microphone.png")
+microphone_image = tk.PhotoImage(file=r"images\microphone.png")
 
 # Entry field for input
 entryField = tk.Entry(root, font=('Roboto', 24, 'bold'), bg='#333333', fg='white', bd=5, relief=tk.RAISED, width=40)
@@ -71,7 +71,7 @@ current_mode = "live"
 def fetch_currencies():
     if current_mode == "live":
         url = "https://api.apilayer.com/fixer/symbols"
-        headers = {"apikey": "zapmf2lDkQ47hEsqjL57hNrYcHijnO6z"}
+        headers = {"apikey": "YOUR KEU HERE!"}
         response = requests.get(url, headers=headers)
         data = response.json()
         currencies = list(data['symbols'].keys())
@@ -98,7 +98,7 @@ def convert_currency_live():
         return
 
     url = f"https://api.apilayer.com/fixer/convert?to={to}&from={cfrom}&amount={amount}"
-    headers = {"apikey": "zapmf2lDkQ47hEsqjL57hNrYcHijnO6z"}
+    headers = {"apikey": "YOUR KEU HERE!"}
 
     response = requests.get(url, headers=headers)
     if response.status_code != 200:
